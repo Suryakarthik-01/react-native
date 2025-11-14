@@ -73,3 +73,7 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Android release keystore 
+android/app/my-release-key.keystore
+*.jks
