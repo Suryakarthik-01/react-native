@@ -21,7 +21,9 @@ const App = () => {
           setTasks(JSON.parse(json));
         }
       } catch (error) {
-        console.log('Load error:', error);
+        if (__DEV__) {
+          console.log('Load error:', error);
+        }
       }
     };
     loadTasks();
@@ -32,7 +34,9 @@ const App = () => {
       try {
         await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
       } catch (error) {
-        console.log('Save error:', error);
+        if (__DEV__) {
+          console.log('Save error:', error);
+        }
       }
     };
     saveTasks();

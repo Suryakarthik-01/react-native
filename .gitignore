@@ -74,6 +74,18 @@ yarn-error.log
 !.yarn/sdks
 !.yarn/versions
 
-# Android release keystore 
+# Android release keystore and sensitive files
 android/app/my-release-key.keystore
+android/gradle.properties
+gradle.properties
 *.jks
+*.keystore
+!debug.keystore
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Local properties
+local.properties
