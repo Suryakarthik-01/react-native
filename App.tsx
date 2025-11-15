@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text } from 'react-native';
-import TaskList from './components/TaskList';
-import Filters from './components/Filters';
-import { Task } from './types/Task';
-import TaskInput from './components/TaskInput';
+import { StyleSheet, Text, StatusBar, Platform, View, Image } from 'react-native';
+import TaskList from './src/components/TaskList';
+import Filters from './src/components/Filters';
+import { Task } from './src/types/Task';
+import TaskInput from './src/components/TaskInput';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -69,7 +69,19 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Todo App</Text>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="#1B3B6F"
+        translucent={false}
+      />
+      <View style={styles.header}>
+        <Image 
+          source={require('./assets/images/check.png')} 
+          style={styles.logo}
+          resizeMode="contain"
+        />
+        <Text style={styles.title}>Todo</Text>
+      </View>
 
       <TaskInput onAdd={addTask} />
 
@@ -94,11 +106,39 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20 },
+  container: { 
+    flex: 1, 
+    backgroundColor: '#f8f9fc',
+  },
+  
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 20,
+    paddingHorizontal: 24,
+    marginBottom: 16,
+    backgroundColor: '#ffffff',
+    elevation: 4,
+    shadowColor: '#1B3B6F',
+    shadowOpacity: 0.12,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 },
+    borderBottomWidth: 1,
+    borderBottomColor: '#f0f4f8',
+  },
+  
+  logo: {
+    width: 36,
+    height: 36,
+    marginRight: 12,
+    tintColor: '#1B3B6F',
+  },
+  
   title: {
     fontSize: 28,
-    fontWeight: 'bold',
-    marginBottom: 15,
+    fontWeight: '800',
     color: '#1B3B6F',
+    letterSpacing: -0.5,
   },
 });

@@ -38,8 +38,9 @@ export default TaskList;
 
 const styles = StyleSheet.create({
   listContainer: {
-    paddingVertical: 12,
-    paddingHorizontal: 10,
+    paddingVertical: 8,
+    paddingHorizontal: 20,
+    flexGrow: 1,
   },
 
   emptyBox: {

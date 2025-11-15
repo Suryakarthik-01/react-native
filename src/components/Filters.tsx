@@ -44,43 +44,48 @@ export default Filters;
 const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    marginVertical: 15,
-    paddingHorizontal: 10,
+    justifyContent: 'space-between',
+    marginVertical: 16,
+    paddingHorizontal: 20,
   },
 
   btn: {
-    paddingVertical: 10,
-    paddingHorizontal: 18,
-    borderRadius: 25,
-    backgroundColor: '#e9eef7',
-    borderWidth: 1,
-    borderColor: '#d0d8e8',
-
+    flex: 1,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    marginHorizontal: 4,
+    borderRadius: 12,
+    backgroundColor: '#f8f9fc',
+    borderWidth: 1.5,
+    borderColor: '#e1e8f0',
+    alignItems: 'center',
     elevation: 2,
     shadowColor: '#000',
-    shadowOpacity: 0.08,
-    shadowRadius: 3,
+    shadowOpacity: 0.05,
+    shadowRadius: 4,
     shadowOffset: { width: 0, height: 2 },
   },
 
   active: {
-    backgroundColor: '#007bff',
-    borderColor: '#007bff',
+    backgroundColor: '#1B3B6F',
+    borderColor: '#1B3B6F',
     elevation: 4,
-    shadowColor: '#007bff',
-    shadowOpacity: 0.25,
+    shadowColor: '#1B3B6F',
+    shadowOpacity: 0.3,
     shadowRadius: 6,
+    shadowOffset: { width: 0, height: 3 },
   },
 
   text: {
-    color: '#333',
+    color: '#64748b',
     fontWeight: '600',
-    letterSpacing: 0.5,
+    fontSize: 14,
+    letterSpacing: 0.3,
+    textAlign: 'center',
   },
 
   activeText: {
-    color: '#fff',
+    color: '#ffffff',
     fontWeight: '700',
   },
 });

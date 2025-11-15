@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     height: 26,
     borderRadius: 6,
     borderWidth: 2,
-    borderColor: '#3B82F6',
+    borderColor: '#1B3B6F',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 12,
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   },
 
   checkmark: {
-    color: '#3B82F6',
+    color: '#1B3B6F',
     fontSize: 18,
     fontWeight: 'bold',
   },
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
 
   edit: {
     fontSize: 18,
-    color: '#3B82F6',
+    color: '#1B3B6F',
     fontWeight: '600',
     marginRight: 8,
   },
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     borderBottomWidth: 1.5,
-    borderColor: '#3B82F6',
+    borderColor: '#1B3B6F',
     paddingVertical: 4,
     fontSize: 16,
   },
