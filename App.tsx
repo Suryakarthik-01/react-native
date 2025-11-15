@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, StatusBar, Platform, View, Image } from 'react-native';
+import { StyleSheet, Text, StatusBar, View, Image } from 'react-native';
 import TaskList from './src/components/TaskList';
 import Filters from './src/components/Filters';
 import { Task } from './src/types/Task';
