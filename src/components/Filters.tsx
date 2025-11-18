@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import i18n from '../localization';
+import { LanguageContext } from '../context/LanguageContext';
 
 interface Props {
   filter: string;
@@ -16,10 +18,15 @@ const Filters: React.FC<Props> = ({
   completed,
   pending,
 }) => {
+  const { language } = useContext(LanguageContext);
+
+  // Force re-render when language changes
+  useEffect(() => {}, [language]);
+
   const filters = [
-    { key: 'ALL', label: `All (${total})` },
-    { key: 'PENDING', label: `Pending (${pending})` },
-    { key: 'COMPLETED', label: `Completed (${completed})` },
+    { key: 'ALL', label: `${i18n.t('all')} (${total})` },
+    { key: 'PENDING', label: `${i18n.t('pending')} (${pending})` },
+    { key: 'COMPLETED', label: `${i18n.t('completed')} (${completed})` },
   ];
 
   return (

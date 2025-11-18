@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import {
   View,
   TextInput,
@@ -7,12 +7,19 @@ import {
   StyleSheet,
 } from 'react-native';
 
+import { LanguageContext } from '../context/LanguageContext';
+import i18n from '../localization';
+
 interface Props {
   onAdd: (title: string) => void;
 }
 
 const TaskInput: React.FC<Props> = ({ onAdd }) => {
   const [text, setText] = useState('');
+  const { language } = useContext(LanguageContext);
+
+  useEffect(() => {
+  }, [language]);
 
   const handleAdd = () => {
     if (text.trim()) {
@@ -27,14 +34,14 @@ const TaskInput: React.FC<Props> = ({ onAdd }) => {
         <TextInput
           value={text}
           onChangeText={setText}
-          placeholder="Add a new task..."
+          placeholder="Add a task..."
           placeholderTextColor="#999"
           style={styles.input}
         />
       </View>
 
       <TouchableOpacity style={styles.addBtn} onPress={handleAdd}>
-        <Text style={styles.addText}>Add</Text>
+        <Text style={styles.addText}>{i18n.t('add')}</Text>
       </TouchableOpacity>
     </View>
   );
